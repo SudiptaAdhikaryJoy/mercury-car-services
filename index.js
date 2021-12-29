@@ -25,7 +25,7 @@ async function run(){
       
       const query = {email: email, date: date};
       const cursor = serviceAppointment.find(query);
-      const appointments = await cursor.toArray();
+      const appointments = await cursor.limit(2).toArray();
       res.json(appointments);
     })
     // post api
